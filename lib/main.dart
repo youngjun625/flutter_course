@@ -9,12 +9,24 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
         body: Center(
-          child: Text('Hypernova'),
-        ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.red[200],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text("Hello")
+              ),
+            ),
+          ),
+        )
       ),
     );
   }
