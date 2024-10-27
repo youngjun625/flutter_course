@@ -13,6 +13,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset("assets/images/boy.png"), 
               Text(
