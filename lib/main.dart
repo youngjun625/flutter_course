@@ -13,31 +13,74 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("assets/images/boy.png"), 
-              Text(
-                "영도체 레귤러",
-                style: TextStyle(
-                  fontFamily: "Yeongdo",
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400
+              Stack(
+                children: [
+                  Image.asset("assets/images/boy.png"),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.width,
+                    color: Colors.black.withOpacity(0.5),
+                  ),
+                  Positioned(
+                    top: 12,
+                    right: 12,
+                    child: Text(
+                      "안녕하세요",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Yeongdo",
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                  )
+                ],
+              ), 
+              SizedBox(height: 12,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Row(
+                  children: [
+                      Text("이름",
+                          style: TextStyle(
+                              fontFamily: "Yeongdo",
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700
+                          ),
+                      ),
+                      Spacer(),
+                      Text("김민혁",
+                          style: TextStyle(
+                              fontFamily: "Yeongdo",
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700
+                          ),
+                      ),
+                  ],
                 ),
               ),
-              Text(
-                "영도체 볼드",
-                style: TextStyle(
-                  fontFamily: "Yeongdo",
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700
-                ),
-              ),
-              Text(
-                "영도체 헤비",
-                style: TextStyle(
-                  fontFamily: "Yeongdo",
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900
+              SizedBox(height: 12,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Row(
+                  children: [
+                      Text("나이",
+                          style: TextStyle(
+                              fontFamily: "Yeongdo",
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700
+                          ),
+                      ),
+                      Spacer(),
+                      Text("18세",
+                          style: TextStyle(
+                              fontFamily: "Yeongdo",
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700
+                          ),
+                      ),
+                  ],
                 ),
               )
             ],
