@@ -12,34 +12,35 @@ class MainApp extends StatelessWidget {
     return  MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Stack(
-            clipBehavior: Clip.none,
-              children: [
-                  Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.red,
-                  ),
-                  Positioned(
-                      top: 25,
-                      left: 25,
-                    child: Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.blue,
-                    ),
-                  ),
-                  Positioned(
-                      top: 50,
-                      left: 50,
-                    child: Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.green,
-                    ),
-                  ),
-              ],
-          ),
+          child: Column(
+            children: [
+              Image.asset("assets/images/boy.png"),
+              Text(
+                "영도체 레귤러",
+                style: TextStyle(
+                  fontFamily: "Yeongdo",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400
+                ),
+              ),
+              Text(
+                "영도체 볼드",
+                style: TextStyle(
+                  fontFamily: "Yeongdo",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700
+                ),
+              ),
+              Text(
+                "영도체 헤비",
+                style: TextStyle(
+                  fontFamily: "Yeongdo",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900
+                ),
+              )
+            ],
+          )
         )
       ),
     );
