@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              Image.asset("assets/images/boy.png"),
+              Image.asset("assets/images/boy.png"), 
               Text(
                 "영도체 레귤러",
                 style: TextStyle(
