@@ -17,40 +17,22 @@ class _MainAppState extends State<MainApp> {
     return  MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: SizedBox(
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                    Flexible(
-                        flex: 5,
-                        child: Container(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                    children: [
+                        TextField(),
+                        Spacer(),
+                        Container(
+                            height: 50,
                             color: Colors.red,
-                            child: Center(
-                                child: Text("50%"),
-                            ),
                         )
-                    ),
-                    Flexible(
-                        flex: 3,
-                        child: Container(
-                            color: Colors.blue,
-                            child: Center(
-                                child: Text("30%"),
-                            ),
-                        )
-                    ),
-                    Flexible(
-                        flex: 2,
-                        child: Container(
-                            color: Colors.green,
-                            child: Center(
-                                child: Text("20%"),
-                            ),
-                        )
-                    ),
-                ]
+                    ],
+                ),
               ),
             ),
           )
