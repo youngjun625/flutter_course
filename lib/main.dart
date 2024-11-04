@@ -12,24 +12,42 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
+  Color boxColor = Colors.blue;
   @override
   Widget build(BuildContext context) {
-    int _counter = 0;
     return  MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Column(
-            children: [
-                Text(_counter.toString()),
-                GestureDetector(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: boxColor
+                  ),
+                  GestureDetector(
                     onTap: () {
-                      setState(() {
-                        _counter++;
-                      });
+                    setState(() {
+                        if (boxColor == Colors.blue) {
+                          boxColor = Colors.red;
+                        } else {
+                          boxColor = Colors.blue;
+                        }
+                    });
                     },
-                    child: const Icon(Icons.add)
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                      ),
+                      child: const Text('Change Color'),
+                    ),
                 )
-            ],
+              ],
+            ),
           )
         )
       ),
