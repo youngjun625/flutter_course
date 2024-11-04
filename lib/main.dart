@@ -12,41 +12,46 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  Color boxColor = Colors.blue;
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: boxColor
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                    setState(() {
-                        if (boxColor == Colors.blue) {
-                          boxColor = Colors.red;
-                        } else {
-                          boxColor = Colors.blue;
-                        }
-                    });
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 20),
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                      ),
-                      child: const Text('Change Color'),
+            child: SizedBox(
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                    Flexible(
+                        flex: 5,
+                        child: Container(
+                            color: Colors.red,
+                            child: Center(
+                                child: Text("50%"),
+                            ),
+                        )
                     ),
-                )
-              ],
+                    Flexible(
+                        flex: 3,
+                        child: Container(
+                            color: Colors.blue,
+                            child: Center(
+                                child: Text("30%"),
+                            ),
+                        )
+                    ),
+                    Flexible(
+                        flex: 2,
+                        child: Container(
+                            color: Colors.green,
+                            child: Center(
+                                child: Text("20%"),
+                            ),
+                        )
+                    ),
+                ]
+              ),
             ),
           )
         )
